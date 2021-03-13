@@ -5,7 +5,7 @@
 let sum = 100000;
 let term = 24;
 let rate = 36;
-let mRate = 36 / 100 / 12; // 0.03
+let mRate = rate / 100 / 12; // 0.03
 //Чтобы определить значение процента в месяц, годовую процентную ставку 36 делим на 100, а затем на 12. Получается 0,03.
 let aytent;//Выплаты в месяц
 aytent = sum * (mRate * (1 + mRate) ** term) / ((1 + mRate) ** term - 1)
@@ -38,5 +38,6 @@ for (i = 1; i <= term; i++) {
 
 	console.log(`Месяц ${i} - Тело кредита ${sum2} - Проценты по кредиту ${bodyPart} - Погашение кредита ${rateOfBodyPart} - Выплаты в месяц ${aytent}
 `);
-}
-
+};
+total = aytent * term;
+console.log(`Переплата = ${(total - sum).toFixed(2)} грн`);
